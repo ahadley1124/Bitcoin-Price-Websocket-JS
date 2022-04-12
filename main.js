@@ -13,10 +13,7 @@ ws.onmessage = function(e) {
     var data = JSON.parse(e.data);
     if (data.type == 'ticker') {
         var price = data.price;
-        if (firstPrice == 0) {
-            firstPrice = price;
-        }
-        console.log((price - firstPrice).toFixed(2));
+        console.log(new Date().toUTCString() + ': ' + price);
     }
 };
 
